@@ -3,14 +3,14 @@ using System.IO;
 
 namespace GetVersionByReleaseNotes
 {
-    public class VersionTools
+    public static class ReleaseNotesVersionTool
     {
         /// <summary>
         /// Extract the version number by Release Notes
         /// </summary>
         /// <param name="filename">the Release Notes MarkDown file</param>
         /// <returns></returns>
-        public static string ExtractFromReleaseNotesExtended(string filename)
+        public static string GetVersion(string filename)
         {
             var fi = new FileInfo(filename);
             if (!fi.Exists) { throw new ArgumentException($"File {filename} doesn´t exist."); }
